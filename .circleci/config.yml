@@ -10,8 +10,8 @@ jobs:
       - run: sudo npm install -g bespoken-tools
       - run: sudo npm install -g codecov
       - run:
-          name: test
-          command: bst test test
+          name: unit testing
+          command: bst test
       - run: codecov
   deploy-dev:
     docker:
@@ -24,7 +24,7 @@ jobs:
       - run:
           name: deploy
           command: ./deploy.sh Dev
-      - run: bst test e2e
+      - run: bst test
   deploy-prod:
     docker:
       - image: circleci/node:6
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: deploy
           command: ./deploy.sh Prod
-      - run: bst test e2e
+      - run: bst test
 
 workflows:
   version: 2
