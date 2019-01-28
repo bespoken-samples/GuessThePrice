@@ -1,0 +1,64 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm install -g ask-cli
+      - run: npm install -g bespoken-tools
+      - run: npm install -g codecov
+      - run:
+          name: test
+          command: bst test test
+      - run: codecov
+  deploy-dev:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm install -g ask-cli
+      - run: npm install -g bespoken-tools
+      - run:
+          name: deploy
+          command: ./deploy.sh Dev
+      - run: bst test e2e
+  deploy-prod:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm install -g ask-cli
+      - run: npm install -g bespoken-tools
+      - run:
+          name: deploy
+          command: ./deploy.sh Prod
+      - run: bst test e2e
+
+workflows:
+  version: 2
+  test-n-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - deploy-dev:
+          requires:
+           - test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: master
+      - deploy-prod:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /prod-.*/
+            branches:
+              ignore: /.*/
