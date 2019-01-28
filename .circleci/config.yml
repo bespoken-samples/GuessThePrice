@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g ask-cli
-      - run: npm install -g bespoken-tools
-      - run: npm install -g codecov
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
+      - run: sudo npm install -g codecov
       - run:
           name: test
           command: bst test test
@@ -19,8 +19,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g ask-cli
-      - run: npm install -g bespoken-tools
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
       - run:
           name: deploy
           command: ./deploy.sh Dev
@@ -31,8 +31,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g ask-cli
-      - run: npm install -g bespoken-tools
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
       - run:
           name: deploy
           command: ./deploy.sh Prod
