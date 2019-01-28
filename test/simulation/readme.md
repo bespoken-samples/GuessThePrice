@@ -29,13 +29,14 @@ Each test script contains the token for each locale and other important paramete
 **FYI - the included tokens are so that new users can get started quickly. However, they are common tokens and will NOT work as reliably as creating your own.** Please follow the steps above to create your own Virtual Device Tokens.
 
 * Within your test script add a configuration section like the example shown below.
-* Add the locale for the test script, the skillID, and the Virtual Device token.
+* Add the locale for the test script, the skillID, stage and the Virtual Device token.
 ```yaml
 ---
 configuration:
  locale: en-US
  type: simulation
  skillId: amzn1.ask.skill.612ef5f8-697a-43ab-ac3c-2523a0617b7b
+ stage: development
 ```
 
 ## __Running End-to-End Tests__
