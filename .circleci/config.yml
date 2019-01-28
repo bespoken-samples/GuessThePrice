@@ -11,7 +11,7 @@ jobs:
       - run: sudo npm install -g codecov
       - run:
           name: unit testing
-          command: bst test
+          command: bst test unit.*yml
       - run: codecov
   deploy-dev:
     docker:
@@ -24,7 +24,7 @@ jobs:
       - run:
           name: deploy
           command: ./deploy.sh Dev
-      - run: bst test
+      - run: bst test simulation.*yml
   deploy-prod:
     docker:
       - image: circleci/node:6
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: deploy
           command: ./deploy.sh Prod
-      - run: bst test
+      - run: bst test simulation.*yml
 
 workflows:
   version: 2
