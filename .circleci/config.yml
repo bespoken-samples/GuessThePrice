@@ -38,11 +38,11 @@ jobs:
 #          command: ./deploy.sh Prod
 #      - run: bst test e2e
 #
-#workflows:
-#  version: 2
-#  test-n-deploy:
-#    jobs:
-#      - test:
+workflows:
+  version: 2
+  test-n-deploy:
+    jobs:
+      - test:
 #          filters:
 #            tags:
 #              only: /.*/
