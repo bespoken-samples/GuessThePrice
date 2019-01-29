@@ -2,7 +2,7 @@
 ## __Overview__
 Recently Amazon launched, in beta, the [multi-turn conversations using the ASK CLI and SMAPI](https://developer.amazon.com/blogs/alexa/post/af4b0637-c473-4768-bdf5-cc2b56eec0d1/now-available-test-multi-turn-conversations-beta-using-the-ask-cli-and-smapi). Making it possible to test and interact with your skills from the ASK CLI without talking.
 
-It's a great feature and here at Bespoken, we are taking advantage of it. We're using this Alexa simulation functionality within our end-to-end testing tools. Thanks to this, and because the interactions are executed using the new Alexa "[dialog](https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html#dialog-command)" command, the time needed to execute end-to-end tests has been drastically reduced.
+It's a great feature and here at Bespoken, we are taking advantage of it. We're using this Alexa simulation functionality within our end-to-end testing tools. Thanks to this, and because the interactions are executed using the new [SMAPI simulation API](https://developer.amazon.com/docs/smapi/skill-simulation-api.html), the time needed to execute end-to-end tests has been drastically reduced.
 
 This sample project shows how to configure your working environment to do end-to-end testing with the Simulation feature, create simple end-to-end test scripts and run it with the Bespoken CLI.
 
@@ -14,7 +14,6 @@ This sample project shows how to configure your working environment to do end-to
 * Enable it for testing via the [Alexa Developer Console](https://developer.amazon.com/docs/devconsole/test-your-skill.html#test-simulator)
 * Get the SkillID of the voice app you want to test
 * Install or update Bespoken CLI to its latest version. Run `$ npm install -g bespoken-tools`
-* [Setup a Virtual Device Token](https://read.bespoken.io/end-to-end/setup/) with Bespoken
 
 ### __Setting up ASK-CLI__
 * Install ask-cli by running `$ npm install -g ask-cli`
