@@ -20,6 +20,7 @@ configuration: # This is the configuration section, you can define your locale o
   locale: en-US
   type: simulation
   skillId: amzn1.ask.skill.612ef5f8-697a-43ab-ac3c-2523a0617b7b
+  stage: live
 
 ---
 - test: Invoke skill, play once with one player and stop.

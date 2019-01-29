@@ -6,59 +6,59 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g ask-cli
-      - run: npm install -g bespoken-tools
-      - run: npm install -g codecov
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
+      - run: sudo npm install -g codecov
       - run:
-          name: test
-          command: bst test test
+          name: unit testing
+          command: bst test unit.*yml
       - run: codecov
-#  deploy-dev:
-#    docker:
-#      - image: circleci/node:6
-#    steps:
-#      - checkout
-#      - run: npm install
-#      - run: npm install -g ask-cli
-#      - run: npm install -g bespoken-tools
-#      - run:
-#          name: deploy
-#          command: ./deploy.sh Dev
-#      - run: bst test e2e
-#  deploy-prod:
-#    docker:
-#      - image: circleci/node:6
-#    steps:
-#      - checkout
-#      - run: npm install
-#      - run: npm install -g ask-cli
-#      - run: npm install -g bespoken-tools
-#      - run:
-#          name: deploy
-#          command: ./deploy.sh Prod
-#      - run: bst test e2e
-#
+  deploy-dev:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - run: npm install
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
+      - run:
+          name: deploy
+          command: ./deploy.sh Dev
+      - run: bst test simulation.*yml
+  deploy-prod:
+    docker:
+      - image: circleci/node:6
+    steps:
+      - checkout
+      - run: npm install
+      - run: sudo npm install -g ask-cli
+      - run: sudo npm install -g bespoken-tools
+      - run:
+          name: deploy
+          command: ./deploy.sh Prod
+      - run: bst test simulation.*yml
+
 workflows:
   version: 2
   test-n-deploy:
     jobs:
       - test:
-#          filters:
-#            tags:
-#              only: /.*/
-#      - deploy-dev:
-#          requires:
-#           - test
-#          filters:
-#            tags:
-#              only: /.*/
-#            branches:
-#              only: master
-#      - deploy-prod:
-#          requires:
-#            - test
-#          filters:
-#            tags:
-#              only: /prod-.*/
-#            branches:
-#              ignore: /.*/
+          filters:
+            tags:
+              only: /.*/
+      - deploy-dev:
+          requires:
+           - test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: master
+      - deploy-prod:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /prod-.*/
+            branches:
+              ignore: /.*/
