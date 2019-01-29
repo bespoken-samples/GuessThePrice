@@ -24,12 +24,9 @@ This sample project shows how to configure your working environment to do end-to
     * After the authentication process has ended, return to your CLI and select the VendorID to complete the initialization process.
 
 ### __Configure your test scripts__
-Each test script contains the token for each locale and other important parameters. We have included our token on this example so you can run it and see it in action. You should add your tokens when creating your own test scripts.
+Using SMAPI Simulation tests requires that we have the skillId being tested, as well as the stage of development it is in.
 
-**FYI - the included tokens are so that new users can get started quickly. However, they are common tokens and will NOT work as reliably as creating your own.** Please follow the steps above to create your own Virtual Device Tokens.
-
-* Within your test script add a configuration section like the example shown below.
-* Add the locale for the test script, the skillID, stage and the Virtual Device token.
+Just add this to the configuration section of the test (or the testing.json file), like so:
 ```yaml
 ---
 configuration:
@@ -96,7 +93,7 @@ The results show:
 * Provide total time needed to complete the test execution
 
 ## __Wrapup__
-To learn more about how to ensure the quality and availability of your voice apps with Bespoken Tools, take a look at this site:     https://bespoken.io/testing.
+To learn more about how to ensure the quality and availability of your voice apps with Bespoken Tools, take a look here:     https://bespoken.io/testing.
 
 And if you need assistance, reach out to Bespoken on any of these channels:
 * [Email](mailto:support@bespoken.io)
