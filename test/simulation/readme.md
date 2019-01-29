@@ -1,4 +1,4 @@
-# __How to end-to-end test your skill with Alexa Simulation feature and Bespoken__
+# __Test your skill with the Skill Simulation API and Bespoken__
 ## __Overview__
 Recently Amazon launched, in beta, the [multi-turn conversations using the ASK CLI and SMAPI](https://developer.amazon.com/blogs/alexa/post/af4b0637-c473-4768-bdf5-cc2b56eec0d1/now-available-test-multi-turn-conversations-beta-using-the-ask-cli-and-smapi). Making it possible to test and interact with your skills from the ASK CLI without talking.
 
