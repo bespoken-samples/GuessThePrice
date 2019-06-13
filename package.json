@@ -6,8 +6,8 @@
   "dependencies": {
     "alexa-sdk": "^1.0.25",
     "alexa-verifier": "^1.0.0",
-    "bespoken-tools": "^2.1.9",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "logless-client": "^0.1.0"
   },
   "nyc": {
     "exclude": [
