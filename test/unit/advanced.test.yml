@@ -88,8 +88,8 @@ configuration:
 - LaunchRequest
 - one
 - jordi
-- 149
-- 23
+- "149"
+- "23"
 - 1233:
   - response.outputSpeech.ssml: "Game ended, your final score was: 1000"
   - sessionAttributes.playerQuantity: 1
@@ -115,14 +115,14 @@ configuration:
 ---
 - test: Launch request, play several times with one player, finish the game.
 - LaunchRequest
-- 2
+- "2"
 - jordi
 - caterina
-- 149
-- 23
-- 1233
-- 32541
-- 3658
+- "149"
+- "23"
+- "1233"
+- "32541"
+- "3658"
 - 32:
   - response.outputSpeech.ssml: Game ended, the winner is jordi with 1000 points. Congratulations!
   - sessionAttributes.playerQuantity: 2
