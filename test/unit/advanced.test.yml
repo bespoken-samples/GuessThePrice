@@ -18,6 +18,7 @@
 ---
 configuration:
   locale: en-US
+  description: Advanced Tests
 
 ---
 - test: Launch request, no further interaction. # Some metadata about this test sequence

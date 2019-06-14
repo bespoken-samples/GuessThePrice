@@ -16,6 +16,7 @@
 
 ---
 configuration: # This is the configuration section, you can define your locale or the mocks here
+  description: Simple Tests
   locale: en-US
 
 ---

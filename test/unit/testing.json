@@ -2,7 +2,6 @@
   "handler": "../../index.js",
   "locale": "en-US",
   "trace": "false",
-  "html": false,
   "jest": {
     "silent": true,
     "collectCoverageFrom": [
