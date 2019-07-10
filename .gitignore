@@ -32,3 +32,6 @@ test/resources/ContentPromoPromptCopy.m4a
 # Babel and Lambda generation outputs
 dist/
 artifact.zip
+
+# bst test html report
+test_output/

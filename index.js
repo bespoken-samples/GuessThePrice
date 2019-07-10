@@ -2,7 +2,7 @@ const Alexa = require('alexa-sdk');
 const verifier = require('alexa-verifier');
 const languageStrings = require('./languageStrings.js');
 const product = require("./lib/products");
-const bst = require('bespoken-tools');
+const bst = require('logless-client');
 const game = require("./lib/game");
 
 exports.handler = bst.Logless.capture(process.env.BESPOKEN_SECRET_KEY, function (event, context) {
@@ -38,7 +38,7 @@ exports.handler = bst.Logless.capture(process.env.BESPOKEN_SECRET_KEY, function 
     alexa.resources = languageStrings;
     alexa.registerHandlers(newSessionHandlers, startModeHandlers, setupUsersHandlers, gameRoundHandlers, defaultHandlers);
     alexa.execute();
-});
+}, 1000);
 
 const states = {
     START_MODE: '_START_MODE', // Prompt the user to start or restart the game.
