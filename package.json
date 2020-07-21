@@ -20,7 +20,7 @@
     "url": "git://github.com/bespoken/guessThePrice.git"
   },
   "devDependencies": {
-    "codecov": "^3.0.2",
+    "codecov": "^3.7.1",
     "nyc": "^14.1.1",
     "virtual-alexa": "^0.7.2",
     "virtual-device-sdk": "^1.5.3"
